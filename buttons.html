@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .btn
+        {
+            margin: 5px;
+            padding: 10px;
+            min-width: 50px;
+        }
+        .btn:nth-child(even)
+        {
+            background-color: pink;
+        }
+        .btn:nth-child(odd)
+        {
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+       <h1>TITLE</h1>
+    </div>
+    <script>
+        containerObj=document.getElementById("container")
+        html=""
+        for(i=0;i<100;i++)
+        {
+            //string lateral
+            html+=`<button id='btn${i}' onclick="update('btn${i}')" class='btn'>${i}</button>`
+        }
+        containerObj.innerHTML+=html;
+        function update(id)
+        {
+            refObj=document.getElementById(id)
+            if(refObj.style.backgroundColor==='orange')
+            {
+                refObj.style.visibility='hidden'
+            }
+            else{
+                refObj.style.backgroundColor='orange';
+            }
+        }
+    </script>
+</body>
+</html>
